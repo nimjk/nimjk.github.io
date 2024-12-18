@@ -1,0 +1,23 @@
+---
+layout: post
+title: 걷기반 SQL 3번
+date: 2024-12-18 15:00:00 +0900
+category: SQL
+---
+# 상품 주문이 들어왔으니 주문을 처리해봅시다!
+
+9. orders 테이블에서 주문 수량(amount)이 2개 이상인 주문을 진행한 소비자의 ID(customer_id)만 선택하는 쿼리를 작성해주세요!
+
+    SELECT customer_id FROM orders WHERE amount >= 2
+
+10. orders 테이블에서 2023년 11월 2일 이후에 주문된 주문 수량(amount)이 2개 이상인 주문을 선택하는 쿼리를 작성해주세요!
+
+    SELECT * FROM orders WHERE order_date > '2023-11-02' AND amount >= 2
+
+11. orders 테이블에서 주문 수량이 3개 미만이면서 배송비(shipping_fee)가 15000원보다 비싼 주문을 선택하는 쿼리를 작성해주세요!
+
+    SELECT * FROM orders WHERE amount < 3 AND shipping_fee > 15000
+
+12. orders 테이블에서 배송비가 높은 금액 순으로 정렬하는 쿼리를 작성해주세요!
+
+    SELECT * FROM orders ORDER BY shipping_fee DESC
