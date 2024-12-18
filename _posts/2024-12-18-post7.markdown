@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 걷기반 SQL 6번
-date: "{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}"
+date: {{ site.time | date: '%Y-%m-%d %H:%M:%S' }}
 category: SQL
 ---
 # 랭크게임 하다가 싸워서 피드백 남겼어요…
