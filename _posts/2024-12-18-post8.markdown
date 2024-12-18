@@ -1,0 +1,24 @@
+---
+layout: post
+title: 걷기반 SQL 8번
+date: 2024-12-18 17:30:00 +0900
+category: SQL
+---
+# LOL을 하다가 홧병이 나서 병원을 찾아왔습니다.
+
+30. doctors 테이블에서 전공(major)가 성형외과인 의사의 이름을 알아내는 쿼리를 작성해주세요!
+
+    SELECT name FROM doctors WHERE major = '성형외과'
+
+31. doctors 테이블에서 각 전공 별 의사 수를 계산하는 쿼리를 작성해주세요!
+
+    SELECT major, COUNT(major) AS cnt_major FROM doctors GROUP BY major
+
+32. doctors 테이블에서 현재 날짜 기준으로 5년 이상 근무(hire_date)한 의사 수를 계산하는 쿼리를 작성해주세요!
+
+    SELECT COUNT(*) AS cnt_doc FROM doctors WHERE hire_date <= DATE_SUB(SYSDATE, INTERVAL 5 YEAR)
+
+33. doctors 테이블에서 각 의사의 근무 기간을 계산하는 쿼리를 작성해주세요!
+
+    SELECT name, SYSDATE-hire_date AS working_term FROM doctors
+
