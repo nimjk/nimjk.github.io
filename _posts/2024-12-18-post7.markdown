@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 걷기반 SQL 6번
+title: 걷기반 SQL 7번
 date: 2024-12-18 17:00:00 +0900
 category: SQL
 ---
