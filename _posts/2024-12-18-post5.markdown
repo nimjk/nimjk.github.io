@@ -8,7 +8,7 @@ category: SQL
 
 17. team_projects 테이블에서 AWS 예산(aws_cost)이 40000 이상 들어간 프로젝트들의 이름을 선택하는 쿼리를 작성해주세요!
 
-    SELECT name FROM tean_projects WHERE aws_cost >= 40000
+    SELECT name FROM team_projects WHERE aws_cost >= 40000
 
 18. team_projects 테이블에서 2022년에 시작된 프로젝트를 선택하는 쿼리를 작성해주세요! 단, start_date < ‘2023-01-01’ 조건을 사용하지 말고 쿼리를 작성해주세요!
 
