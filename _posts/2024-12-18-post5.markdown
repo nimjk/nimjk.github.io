@@ -1,0 +1,23 @@
+---
+layout: post
+title: 걷기반 SQL 5번
+date: "`r format(Sys.Date())`"
+category: SQL
+---
+# 공부하다보니 팀 프로젝트 시간이 왔어요!
+
+17. team_projects 테이블에서 AWS 예산(aws_cost)이 40000 이상 들어간 프로젝트들의 이름을 선택하는 쿼리를 작성해주세요!
+
+    SELECT name FROM tean_projects WHERE aws_cost >= 40000
+
+18. team_projects 테이블에서 2022년에 시작된 프로젝트를 선택하는 쿼리를 작성해주세요! 단, start_date < ‘2023-01-01’ 조건을 사용하지 말고 쿼리를 작성해주세요!
+
+    SELECT * FROM team_projects WHERE start_date BETWEEN '2021-12-31' AND '2023-01-01'
+
+19. team_projects 테이블에서 현재 진행중인 프로젝트를 선택하는 쿼리를 작성해주세요. 단, 지금 시점의 날짜를 하드코딩해서 쿼리하지 말아주세요!
+
+    SELECT * FROM team_projects WHERE end_date > SYSDATE
+
+20. team_projects 테이블에서 각 프로젝트의 지속 기간을 일 수로 계산하는 쿼리를 작성해주세요!
+
+    SELECT *, DATEDIFF(DAY, start_date, end_date) AS duration_term FROM team_projects 
