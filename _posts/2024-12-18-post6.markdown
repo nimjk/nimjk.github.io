@@ -1,0 +1,23 @@
+---
+layout: post
+title: 걷기반 SQL 6번
+date: date: "{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}"
+category: SQL
+---
+# 팀 프로젝트 열심히 했으니 다시 놀아볼까요?!
+
+21. lol_users 테이블에서 각 유저의 레이팅(rating) 순위를 계산하는 쿼리를 작성해주세요! 전체 지역(region) 기준이고 순위는 레이팅이 높을수록 높아야해요. (e.g. rating 1400 유저의 순위 > rating 1350 유저의 순위)
+
+    SELECT *, RANK() OVER(ORDER BY rating DESC) AS 'rank' FROM lol_users
+
+22. lol_users 테이블에서 가장 늦게 게임을 시작한(join_date) 유저의 이름을 선택하는 쿼리를 작성해주세요
+
+    SELECT name FROM lol_users ORDER BY join_date LIMIT 1
+
+23. lol_users 테이블에서 지역별로 레이팅이 높은 순으로 유저들을 정렬해서 나열하는 쿼리를 작성해주세요!
+
+    SELECT * FROM lol_users ORDER BY region, rating DESC
+
+24. lol_users 테이블에서 지역별로 평균 레이팅을 계산하는 쿼리를 작성해주세요!
+
+    SELECT region, AVG(rating) AS avg_rating FROM lol_users GROUP BY region
