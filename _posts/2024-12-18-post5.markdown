@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 걷기반 SQL 5번
-date: 2024-12-18 16:00:00 +0900
+date: date: "{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}"
 category: SQL
 ---
 # 공부하다보니 팀 프로젝트 시간이 왔어요!
