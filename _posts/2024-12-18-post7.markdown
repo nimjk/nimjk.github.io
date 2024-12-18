@@ -1,0 +1,27 @@
+---
+layout: post
+title: 걷기반 SQL 6번
+date: "{{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}"
+category: SQL
+---
+# 랭크게임 하다가 싸워서 피드백 남겼어요…
+
+25. lol_feedbacks 테이블에서 만족도 점수(satisfaction_score)에 따라 피드백을 내림차순으로 정렬하는 쿼리를 작성해주세요!
+
+    SELECT * FROM lol_feedbacks ORDER BY satisfaction_score DESC
+
+26. lol_feedbacks 테이블에서 각 유저별로 최신 피드백을 찾는 쿼리를 작성해주세요!
+
+    SELECT name, MAX(feedback_date) AS 'feedback_date' FROM lol_feedbacks GROUP BY name
+
+27. lol_feedbacks 테이블에서 만족도 점수가 5점인 피드백의 수를 계산하는 쿼리를 작성해주세요!
+
+    SELECT COUNT(CASE SHEN satisfaction_score = 5 then 1 end) AS 5point_cnt FROM lol_feedbacks
+
+28. lol_feedbacks 테이블에서 가장 많은 피드백을 남긴 상위 3명의 고객을 찾는 쿼리를 작성해주세요!
+
+    SELECT name,COUNT(name) AS cnt_name FROM lol_feedbacks GROUP BY name order by cnt_name desc LIMIT 3
+
+29. lol_feedbacks 테이블에서 평균 만족도 점수가 가장 높은 날짜를 찾는 쿼리를 작성해주세요!
+
+    SELECT feedback_date, AVG(satisfaction_score) AS avg_score FROM lol_feedbacks GROUP BY feedback_date ORDER BY avg_score LIMIT 1
