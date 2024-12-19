@@ -1,0 +1,35 @@
+---
+layout: post
+title: 걷기반 SQL 마지막
+date: 2024-12-19 15:00:00 +0900
+category: SQL
+---
+# 마지막 연습 문제!
+
+44. 모든 주문의 주문 ID와 주문된 상품의 이름을 나열하는 쿼리를 작성해주세요!
+
+    SELECT orders.id AS order_id, products.name AS products_name FROM orders JOIN products ON orders.product_id = products.id
+
+45. 총 매출(price*quantity의 합)이 가장 높은 상품의 ID와 해당 상품의 총 매출을 가져오는 쿼리를 작성해주세요!
+
+    SELECT products.id, SUM(products.price*orders.quantity) AS total_salary FROM products LEFT JOIN orders ON products.id = orders.product_id GROUP BY products.id ORDER BY total_salary DESC LIMIT 1
+
+46. 각 상품 ID별로 판매된 총 수량(quantity)을 계산하는 쿼리를 작성해주세요!
+
+    SELECT product_id, SUM(quantity) AS total_quantity FROM orders GROUP BY product_id
+
+47. 2023년 3월 3일 이후에 주문된 모든 상품의 이름을 나열하는 쿼리를 작성해주세요!
+
+    SELECT products.name AS name FROM products LEFT JOIN orders ON products.id = orders.product_id WHERE orders.order_date > '2023-03-03'
+
+48. 가장 많이 판매된 상품의 이름을 찾는 쿼리를 작성해주세요!
+
+    SELECT products.name AS name FROM products LEFT JOIN orders ON products.id = orders.product_id GROUP BY products.name ORDER BY SUM(orders.quantity) DESC LIMIT 1
+
+49. 각 상품 ID별로 평균 주문 수량을 계산하는 쿼리를 작성해주세요!
+
+    SELECT product_id, AVG(quantity) AS avg_quantity FROM orders GROUP BY product_id
+
+50. 판매되지 않은 상품의 ID와 이름을 찾는 쿼리를 작성해주세요!
+
+    SELECT products.id, products.name FROM products LEFT JOIN orders ON products.id = orders.product_id WHERE orders.product_id IS NULL
