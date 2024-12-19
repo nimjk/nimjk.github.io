@@ -16,7 +16,7 @@ category: SQL
 
 32. doctors 테이블에서 현재 날짜 기준으로 5년 이상 근무(hire_date)한 의사 수를 계산하는 쿼리를 작성해주세요!
 
-    SELECT COUNT(*) AS cnt_doc FROM doctors WHERE hire_date <= DATE_SUB(SYSDATE, INTERVAL 5 YEAR)
+    SELECT COUNT(*) AS cnt_doc FROM doctors WHERE hire_date <= DATE_SUB(CURDATE(), INTERVAL 5 YEAR)
 
 33. doctors 테이블에서 각 의사의 근무 기간을 계산하는 쿼리를 작성해주세요!
 
