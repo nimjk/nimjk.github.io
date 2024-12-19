@@ -1,0 +1,31 @@
+---
+layout: post
+title: 걷기반 SQL 10번
+date: 2024-12-19 15:00:00 +0900
+category: SQL
+---
+# 이젠 테이블이 2개입니다
+
+38. 현재 존재하고 있는 총 부서의 수를 구하는 쿼리를 작성해주세요!
+
+    SELECT COUNT(DISTINCT name) AS cnt_departments FROM departments
+
+39. 모든 직원과 그들이 속한 부서의 이름을 나열하는 쿼리를 작성해주세요!
+
+    SELECT employees.name AS name, departments.name AS dep_name FROM employees JOIN departments ON employees.department_id = departments.id
+
+40. '기술팀' 부서에 속한 직원들의 이름을 나열하는 쿼리를 작성해주세요!
+
+    SELECT name FROM employees JOIN departments ON employees.department_id = departments.id WHERE departments.name = '기술팀'
+
+41. 부서별로 직원 수를 계산하는 쿼리를 작성해주세요!
+
+    SELECT departments.name AS dep_name, COUNT(employees.id) AS cnt_dep FROM departments LEFT JOIN employees ON departments.id = employees.department_id GROUP BY departments.id
+
+42. 직원이 없는 부서의 이름을 찾는 쿼리를 작성해주세요!
+
+    SELECT departments.name FROM departments LEFT JOIN employees ON departments.id = employees.department_id GROUP BY departments.id WHERE COUNT(employees.id) = 0
+
+43. '마케팅팀'부서에만 속한 직원들의 이름을 나열하는 쿼리를 작성해주세요!
+
+    SELECT employees.name FROM employees,departments WHERE employees.department_id = departments.id AND departments.name = '마케팅팀'
