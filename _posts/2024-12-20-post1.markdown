@@ -1,0 +1,11 @@
+---
+layout: post
+title: 달리기반 SQL Lv.1
+date: 2024-12-20 14:50:00 +0900
+category: SQL
+---
+# 데이터 속 김서방 찾기
+
+문제 : 김씨 성을 가지고 있는 교육생의 수를 표현하는 결과테이블을 만드는 쿼리를 작성해주세요!
+    
+    SELECT COUNT(name) AS name_cnt FROM user WHERE name like '김%'
