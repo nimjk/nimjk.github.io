@@ -19,7 +19,7 @@ category: TIL
 * 스타일 언어는 안드로이드 스튜디오 앱 레이아웃과 코드가 유사하다. 아마 CSS라는 공통점이 있어서 그런듯 하다. 대신 웹에서 margin은 한줄에 4방향 정렬하거나 각각 따로 정렬하는 것이 가능하지만 안드로이드 스튜디오로는 탑 바텀 오른쪽 왼쪽 전부 따로 정의해야한다. 
 
 * 오늘 작성해본 코드들
-- html + css 예제코드
+    - html + css 예제코드
 
 ```yml
 <!DOCTYPE html>
@@ -168,8 +168,8 @@ category: TIL
 
 </html>
 ``` 
+   - html + javascript 예제 코드
 
--html + javascript 예제 코드
 ```yml
 <!DOCTYPE html>
 <html>
