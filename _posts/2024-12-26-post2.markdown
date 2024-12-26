@@ -20,7 +20,7 @@ category: TIL
 
 * 오늘 작성해본 코드들
 - html + css 예제코드
-```
+``` 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,27 +32,22 @@ category: TIL
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
-
         .nanum-gothic-coding-regular {
             font-family: "Nanum Gothic Coding", serif;
             font-weight: 400;
             font-style: normal;
         }
-
         .mytitle {
             height: 250px;
             color: white;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             background-image: url('https://images.unsplash.com/photo-1511992243105-2992b3fd0410?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-position: center;
             background-size: cover;
         }
-
         .mytitle>button {
             width: 150px;
             height: 50px;
@@ -62,7 +57,6 @@ category: TIL
             border-radius: 5px;
             margin-top: 20px;
         }
-
         .mypostingbox {
             width: 500px;
             margin: 30px auto 0px auto;
@@ -70,7 +64,6 @@ category: TIL
             box-shadow: 0px 0px 3px 0px blue;
             border-radius: 5px;
         }
-
         .mybtn {
             display: flex;
             flex-direction: row;
@@ -80,10 +73,8 @@ category: TIL
         .mybtn > button{
             margin-right: 5px;
         }
-
         .mycards {
             width: 1200px;
-
             margin: 30px auto 0px auto;
         }
     </style>
@@ -114,8 +105,7 @@ category: TIL
         <div class="mybtn">
             <button type="button" class="btn btn-dark">기록하기</button>
             <button type="button" class="btn btn-outline-dark">닫기</button>
-        </div>
-        
+        </div>   
     </div>
     <div class="mycards">
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -176,10 +166,10 @@ category: TIL
 </body>
 
 </html>
-```
+``` 
 
 -html + javascript 예제 코드
-```
+``` 
 <!DOCTYPE html>
 <html>
 
@@ -199,20 +189,16 @@ category: TIL
             { 'name': '예지', 'age': 36 }
         ];
         $('#q1').empty();
-
         let a = fruits[0];
         let temp_html = `<p>${a}</p>`;
         $('#q1').append(temp_html);
-
         $('#q2').empty();
         people.forEach(a =>{
             let temp_html = `<p>${a['name']}는 ${a['age']}살입니다.</p>`;
             $('#q2').append(temp_html);
         })
-
     }
 </script>
-
 <body>
     <div class="top-part">
         <h1>자바스크립트 문법 연습하기!</h1>
@@ -240,9 +226,8 @@ category: TIL
         </div>
     </div>
 </body>
-
 </html>
-```
+``` 
 
 # 알고리즘 코드카타
 
